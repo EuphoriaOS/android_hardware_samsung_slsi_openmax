@@ -12,7 +12,7 @@ BOARD_USE_ANB := true
 BOARD_USE_KHRONOS_OMX_HEADER := false
 
 ifeq ($(BOARD_USE_KHRONOS_OMX_HEADER), false)
-ANDROID_MEDIA_INC := $(TOP)/frameworks/native/include/media
+	ANDROID_MEDIA_INC := $(TOP)/frameworks/native/include/media
 endif
 
 EXYNOS_OMX_TOP := $(LOCAL_PATH)
@@ -32,15 +32,18 @@ include $(EXYNOS_OMX_COMPONENT)/common/Android.mk
 include $(EXYNOS_OMX_COMPONENT)/video/dec/Android.mk
 include $(EXYNOS_OMX_COMPONENT)/video/dec/h264/Android.mk
 include $(EXYNOS_OMX_COMPONENT)/video/dec/mpeg4/Android.mk
+
 ifeq ($(TARGET_BOARD_PLATFORM),exynos5)
 include $(EXYNOS_OMX_COMPONENT)/video/dec/vp8/Android.mk
 endif
+
 include $(EXYNOS_OMX_COMPONENT)/video/dec/mpeg2/Android.mk
 include $(EXYNOS_OMX_COMPONENT)/video/dec/vc1/Android.mk
 
 include $(EXYNOS_OMX_COMPONENT)/video/enc/Android.mk
 include $(EXYNOS_OMX_COMPONENT)/video/enc/h264/Android.mk
 include $(EXYNOS_OMX_COMPONENT)/video/enc/mpeg4/Android.mk
+
 ifeq ($(BOARD_USE_VP8ENC_SUPPORT), true)
 include $(EXYNOS_OMX_COMPONENT)/video/enc/vp8/Android.mk
 endif
