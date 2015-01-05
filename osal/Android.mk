@@ -61,7 +61,7 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi/$(PLATFORM_DIR)/include \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/include
 
-LOCAL_ADDITIONAL_DEPENDENCIES += \
+LOCAL_ADDITIONAL_DEPENDENCIES := \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 ifeq ($(BOARD_USE_KHRONOS_OMX_HEADER), true)
